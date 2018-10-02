@@ -1,0 +1,72 @@
+[
+    {
+        "Date": 2008,
+        "DateLabel": "2008/09",
+        "Male": 211371,
+        "Female": 8594,
+        "Total": 219965
+    },
+    {
+        "Date": 2009,
+        "DateLabel": "2009/10",
+        "Male": 284038,
+        "Female": 10056,
+        "Total": 294094
+    },
+    {
+        "Date": 2010,
+        "DateLabel": "2010/11",
+        "Male": 344300,
+        "Female": 10416,
+        "Total": 354716
+    },
+    {
+        "Date": 2011,
+        "DateLabel": "2011/12",
+        "Male": 361707,
+        "Female": 22958,
+        "Total": 384665
+    },
+    {
+        "Date": 2012,
+        "DateLabel": "2012/13",
+        "Male": 423122,
+        "Female": 27767,
+        "Total": 450889
+    },
+    {
+        "Date": 2013,
+        "DateLabel": "2013/14",
+        "Male": 490517,
+        "Female": 29121,
+        "Total": 519638
+    },
+    {
+        "Date": 2014,
+        "DateLabel": "2014/15",
+        "Male": 477690,
+        "Female": 21412,
+        "Total": 499102
+    },
+    {
+        "Date": 2015,
+        "DateLabel": "2015/16",
+        "Male": 385226,
+        "Female": 18467,
+        "Total": 403693
+    }, 
+    {
+        "Date": 2016,
+        "DateLabel": "2016/17",
+        "Male": 362766,
+        "Female": 20105,
+        "Total": 382871
+    },
+    {
+        "Date": 2017,
+        "DateLabel": "2017/18",
+        "Male": 362766,
+        "Female": 20105,
+        "Total": 382871
+    }
+]

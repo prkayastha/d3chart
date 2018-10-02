@@ -1,0 +1,28 @@
+.axis path,
+.axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+.circle-points:hover {
+    opacity: 0.8;
+}
+
+.tool-tip {
+    display: none;
+    position: absolute;
+    width: auto;
+    height: auto;
+    border: 1px solid black;
+    background: #FFF
+}
+
+#bubbleChart {
+    position: relative;
+}
