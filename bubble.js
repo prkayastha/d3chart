@@ -42,22 +42,22 @@
             if (error == null || error == undefined) {
                 dataset = data;
 
-                renderTheGraph()
+                renderTheGraph(dataset)
             } else {
-                window.alert('Something wrond happened while loading the data from JSON file. Try again.')
+                window.alert('Something wrong happened while loading the data from JSON file. Try again.')
             }
         })
 
-        function renderTheGraph() {
+        function renderTheGraph(dataset) {
 
-            setScales()
+            setScales(dataset)
 
-            plotPoints()
+            plotPoints(dataset)
 
-            renderAxis()
+            renderAxis(dataset)
         }
 
-        function setScales() {
+        function setScales(dataset) {
 
             xScale = d3.scale.linear()
                 .domain([d3.min(dataset, function (d) { return d.Date }) - 1, d3.max(dataset, function (d) { return d.Date })])
@@ -80,7 +80,7 @@
                 .range([5, 15])
         }
 
-        function renderAxis() {
+        function renderAxis(dataset) {
             var tickLabel = ['']
 
             dataset.forEach(eachData => {
@@ -125,15 +125,15 @@
                 .text(Config.yAxisLabel)
         }
 
-        function plotPoints() {
+        function plotPoints(dataset) {
 
-            plotMalePoint()
+            plotMalePoint(dataset)
 
-            plotFemalePoint()
+            plotFemalePoint(dataset)
 
         }
 
-        function plotMalePoint() {
+        function plotMalePoint(dataset) {
             var maleCircle = svg.selectAll('.male.circle')
                 .data(dataset)
 
@@ -166,7 +166,7 @@
 
         }
 
-        function plotFemalePoint() {
+        function plotFemalePoint(dataset) {
             var femaleCircle = svg.selectAll('.female .circle')
                 .data(dataset)
                 .enter()
