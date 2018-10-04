@@ -17,14 +17,14 @@
 
         var chartDiv = d3.select('#bubbleChart')
 
-        chartDiv.style('width', Config.chartWidth)
-
         var hoverData = null
 
         var selectedCircle = undefined
 
+        var actualWidth = parseInt(chartDiv.style('width'), 10)
+
         var svg = chartDiv.append('svg')
-            .attr('width', Config.chartWidth)
+            .attr('width', actualWidth)
             .attr('height', Config.chartHeight)
             .attr('padding', 20)
 
@@ -48,6 +48,8 @@
             }
         })
 
+        d3.select(window).on('resize', resize)
+
         function renderTheGraph(dataset) {
 
             setScales(dataset)
@@ -61,7 +63,7 @@
 
             xScale = d3.scale.linear()
                 .domain([d3.min(dataset, function (d) { return d.Date }) - 1, d3.max(dataset, function (d) { return d.Date })])
-                .range([Config.padding, Config.chartWidth - Config.padding])
+                .range([Config.padding, actualWidth - Config.padding])
             // .tickFormat(function (d, i) { return tickLabel[i] })
 
 
@@ -100,7 +102,7 @@
 
             //text label for x axis
             svg.append('text')
-                .attr('transform', 'translate(' + (Config.chartWidth / 2) + ', ' + (Config.chartHeight - 20) + ')')
+                .attr('transform', 'translate(' + (actualWidth / 2) + ', ' + (Config.chartHeight - 20) + ')')
                 .style('text-anchor', 'middle')
                 .text(Config.xAxisLabel)
 
@@ -213,7 +215,9 @@
                 }
             }
 
-            var chartMidx = Config.chartWidth / 2
+            var actualWidth = parseInt(chartDiv.style('width'), 10)
+
+            var chartMidx = actualWidth / 2
             var chartMidy = Config.chartHeight / 2
 
             if (hoverData) {
@@ -233,7 +237,7 @@
                     elPopup.style('right', 'auto')
                     elPopup.style('left', x + 'px')
                 } else {
-                    x = Config.chartWidth - x + 20
+                    x = actualWidth - x + 20
                     elPopup.style('left', 'auto')
                     elPopup.style('right', x + 'px')
                 }
@@ -248,6 +252,20 @@
 
         function hidePopup() {
             elPopup.style('display', 'none')
+        }
+
+        function resize() {
+            //update width
+            var actualWidth = parseInt(chartDiv.style('width'), 10)
+
+            var svg = chartDiv.append('svg')
+            .attr('width', actualWidth)
+            .attr('height', Config.chartHeight)
+            .attr('padding', 20)
+
+            xScale.range([Config.padding, actualWidth - Config.padding])
+
+            
         }
     }
 )()
